@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой музыкальный архив</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Проигрывание музыки</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to SMusic</h1>
-        <p>здесь собрано отборное говно</p>
-    </header>
+  <audio id="myAudio" src="path/to/your/audio.mp3"></audio>
+  <button id="playButton">Play/Pause</button>
 
-    <main>
-        <section class="songs-list">
-            <!-- Песни будут добавляться здесь через JS -->
-        </section>
-    </main>
+  <script>
+    const audio = document.getElementById('myAudio');
+    const playButton = document.getElementById('playButton');
 
-    <footer>
-        <p>©2025 SMusic</p>
-    </footer>
-
-    <script src="script.js"></script>
+    playButton.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = 'Pause';
+      } else {
+        audio.pause();
+        playButton.textContent = 'Play';
+      }
+    });
+  </script>
 </body>
 </html>
